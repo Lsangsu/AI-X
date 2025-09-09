@@ -1,0 +1,29 @@
+﻿<html>
+
+<head>
+  <title>3</title>
+</head>
+
+<body>
+  <img src="img/banner_1.jpg" id="banner" />
+
+
+  <script>
+    const banner = document.getElementById('banner');
+    let ct = 0;
+    let banners = new Array("img/banner_1.jpg", "img/banner_2.jpg", "img/banner_3.jpg");
+
+    setTimeout(progress, 1000);
+
+    function progress() {
+      banner.src = banners[ct];
+      ct++;
+      setTimeout(progress, 1000);
+      if (ct > 2) {
+        ct = 0;
+      }
+    }
+  </script>
+</body>
+
+</html>

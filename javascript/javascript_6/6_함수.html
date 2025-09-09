@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6_함수</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h2>매개변수 없이 함수에 전달된 값 받아오기</h2>
+    <script>
+        function sum1(){   //매개변수 X
+            let sum = arguments[0] + arguments[1] + arguments[2];   
+                      //전달되는 값 중 0, 1, 2번쨰 값
+            document.write(sum);
+        }
+        sum1(10, 20, 30);   //매개변수가 없지만 arguments를 넣어주면 매개변수를 받을 수 있음.
+        document.write('<br>----------<br>');
+        sum1(10, 20);       //함수 내 arguments가 3개지만 2개값만 작성해서 NaN(Not a Number) 반환
+
+        document.write('<br>==========해결방법==========<br>');
+
+        function out(){
+            document.write("아규먼트 갯수: " + arguments.length + '<br>');
+            for(let i = 0; i<arguments.length; i++){
+                document.write(arguments[i] + " ");
+            }
+            document.write('<br>----------<br>');
+        }
+
+        out();
+        out(10);
+        out(10, 20);
+        out('a', 'b', 'c');
+    </script>
+
+    <hr>
+
+    <script>
+        // let user_id = prompt("ID를 입력해주세요.");
+        // let user_pw = prompt("비밀번호를 입력해주세요.");
+        function login(id, pw){
+            if(id == 'LSS'){
+                if(pw == '1815887'){
+                    document.write("환영합니다~");
+                }else{
+                    alert("잘못된 비밀번호입니다.");
+                }
+            }else{
+                alert("등록되지 않은 계정입니다.");
+            }
+        }
+
+        login(user_id, user_pw);
+    </script>
+
+    <hr>
+
+    <script>
+        function outter(){
+            let test1 = 1;
+            let test2 = 2;
+            
+            function inner(){
+                let test2 = 100;
+                document.write(test1);
+                document.write(test2);
+            }
+            
+            inner();
+        }
+        outter();
+    </script>
+
+    <hr>
+
+    <script>
+        function factorial(number){
+            if(number == 1){
+                return number;
+            }else{
+                return number * factorial(number-1);
+            }
+        }
+        document.write(factorial(5));
+    </script>
+
+    <hr>
+
+    <script>
+        let result = eval('1 + 2');
+        document.write(result + '<br>');
+        
+        let result1 = isFinite(1000/3);
+        let result2 = isFinite(1000/0);
+        document.write(result1 + '<br>');
+        document.write(result2 + '<br>');
+        
+        let result3 = isNaN('배고픈데~');
+        let result4 = isNaN(100);
+        document.write(result3 + '<br>');
+        document.write(result4 + '<br>');
+        
+        let result5 = parseFloat('3.14');
+        document.write(result5 + '<br>');
+        
+        let result6 = parseInt("123456", 10);
+        document.write(result6 + '<br>');
+    </script>
+</body>
+</html>

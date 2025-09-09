@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Parameter</title>
+</head>
+<body>
+    <script>
+        //es5
+        //foo[0] = a가 들어가지만 b, c는 값이 없어서 undefined 출력
+        const foo = (a, b, c) => {
+            console.log(a, b, c);
+        }
+        foo('a');
+
+        //es6 - default parameter
+        //값이 없으면 기본값을 출력하라는 매개변수
+        const func = (a = 'a', b = 'b', c = 'c') => {
+            console.log(a, b, c);
+        }
+
+        func('LSS');
+        func();
+    </script>
+</body>
+</html>

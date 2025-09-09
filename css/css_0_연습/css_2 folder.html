@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        a:link{color:blue}
+        a:visited{color:yellow}
+        a:active{color:green}
+        a:link, a:visited, a:active{text-decoration: none;}
+
+        div:first-line{color:green}
+        div:first-letter{color:red}
+
+        /* h1>b{color:red} */
+        h1 b{color:blue}
+        h1>b{color:red}
+        
+        
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.daum.com">네이버 링크</a>
+
+    <hr>
+
+    <div>
+        첫번째 줄은 녹색(first_line) / 첫번째 글자 빨간색(first-letter)이다. <br>
+        두번째 줄은 속성변환 없음
+    </div>
+
+    <hr>
+
+    <h1>자손 선택 연습</h1>
+
+    <b>자손 선택 연습</b>
+
+    <h1><b>자손 선택 연습</b></h1>
+
+
+    <h1>
+        <b>h1 asd</b>
+            <p>
+                <b>h1속 p문단속 b</b>
+            </p>
+    </h1>
+
+    
+</body>
+</html>

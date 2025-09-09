@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout() 함수</title>
+     <!-- 지정된 시간 이후 실행 -->
+
+    <style>
+        .popup {
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            display: none;
+        }
+        .popup2 {
+            width: 100px;
+            height: 100px;
+            background-color: cyan;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="popup">
+        <button onclick="window.close()">close</button>
+    </div>
+
+    <div class="popup2">
+        <button onclick="window.close()">close</button>
+    </div>
+
+    <script>
+        setTimeout(popup, 3000);
+                // 콜백함수, 시간설정(3초)
+        function popup(){
+            document.getElementsByClassName('popup')[0].style.display = 'block';
+        }
+
+        // 위 작성한 내용과 동일하다
+        setTimeout(function(){
+            document.getElementsByClassName('popup2')[0].style.display = 'block';
+        }, 3000);
+    </script>
+</body>
+</html>

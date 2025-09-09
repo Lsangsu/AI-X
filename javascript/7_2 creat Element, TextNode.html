@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="pra1">
+        <p>click the button to make a Button element</p>
+        <button onclick="myFunction()">Try it</button>
+    </div>
+
+    <script>
+        function myFunction(){
+            const btn = document.createElement('button');
+            const text1 = document.createTextNode("Hello World");
+            btn.appendChild(text1);
+            document.getElementById('pra1').appendChild(btn);
+        };
+    </script>
+
+    <div id="pra2">
+    <p>Click the button to create a h1 element with some text.</p>
+    <button onclick="myFunction2()">Try it</button>
+    </div>
+
+    <script>
+        function myFunction2(){
+            const h = document.createElement('h1');
+            const text2 = document.createTextNode("Hello World");
+            h.appendChild(text2);
+            document.getElementById('pra2').appendChild(h);
+        };
+    </script>
+
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+
+    <script>
+        const node = document.createElement('li');
+        const text3 = document.createTextNode('Water');
+        node.appendChild(text3);
+        document.getElementById('MyList').appendChild(node)
+    </script>
+
+
+</body>
+</html>

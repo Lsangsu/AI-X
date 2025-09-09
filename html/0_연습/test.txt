@@ -1,0 +1,14 @@
+<!DOCTYPE html>  <- HTML 선언하는 문장
+<html>
+    <head>
+      <meta charset="utf-8">
+       *태그  속성     속성값
+      <title>test</title>  <- title 사이에 들어가는 문장은 웹 제목으로 활성화
+    </head>
+
+    <body>
+      <h1>안녕하세요</h1>
+    </body>
+</html>
+
+* HTML, head, body 등 마지막 부분은 /를 작성해서 종료선언

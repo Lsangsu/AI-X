@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>구구단 한단을 for문으로 만드시오</h2>
+    <script>
+        document.write("2단" + '<br>');
+        for(var i = 1; i<10; i++){
+            document.write("2 X " + i + " = " + 2*i + '<br>');
+        }
+    </script>
+
+    <h2>for문을 while문으로 변경</h2>
+    <script>
+        document.write("3단" + '<br>');
+        var i = 1;
+        while(i<10){
+            document.write("3 X " + i + " = " + 3*i + '<br>');
+            i++;
+        }
+    </script>
+
+    <h2>prompt로 받아서 작성</h2>
+    <script>
+        var num = window.prompt("원하는 숫자를 입력해주세요");
+        document.write(num + "단" + '<br>');
+        for(var i = 1; i<10; i++){
+            document.write(num + " X " + i + " = " + num * i + '<br>');
+        }
+    </script>
+
+    <h2>구구단을 함수로</h2>
+    <script>
+        function cal(num){
+            document.write(num + "단" + '<br>');
+            for(var i = 1; i < 10; i++){
+                document.write(num + " X " + i + " = " + num*i + '<br>');
+            }
+        }
+        cal(5);
+    </script>
+
+    <h2>구구단 이중for문</h2>
+        <script>
+        var x = 2;
+        var y = 1;
+
+        for(x; x<10; x++){
+            document.write(x + "단" + '<br>')
+            for(y; y<10; y++){
+                document.write(x + " X " + y + " = " + x * y + '<br>');
+            }
+            y = 1;
+            document.write("-------------------<br>");
+        }
+        </script>
+
+    <h2>최대값 / 최소값 / 평균값</h2>
+    <script>
+        var arg = [10, 20, 30, 40 ,50];
+        var max = arg[0];
+        var min = arg[0];
+        var avr = 0;
+
+        for(var i = 0; i<arg.length; i++){
+            if(max < arg[i]){
+                max = arg[i];
+            }
+        }
+        document.write("최대값은 : " + max + '<br>');
+
+        for(var i = 0; i<arg.length; i++){
+            if(min > arg[i]){
+                min = arg[i];
+            }
+        }
+        document.write("최소값은 : " + min + '<br>');
+
+        for(var i = 0; i<arg.length; i++){
+            avr += arg[i];
+        }
+        document.write("평균값은 : " + avr/arg.length);
+    </script>
+
+    <h2>문자 / 숫자 확인</h2>
+    <script>
+        let a = prompt("숫자나 문자를 입력하세요");
+        if(isNaN(a) == true){
+            document.write(a + "는 문자입니다!!")
+        }else{
+            document.write(a + "는 숫자입니다!!")
+        }
+    </script>
+
+    <h2>성년 / 미성년</h2>
+    <script>
+        var age = prompt("나이를 입력해주세요");
+        if(age>=20){
+            document.write(age + "살은 성년입니다.");
+        }else if(age<20){
+            document.write(age + "살은 미성년입니다.");
+        }
+    </script>
+</body>
+</html>

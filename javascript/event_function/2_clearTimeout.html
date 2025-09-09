@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clearTimeout() 함수</title>
+        <!-- setTimeout 시간 초기화 -->
+         
+    <style>
+        .popup {
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="popup">
+        <button onclick="window.close()">close</button>
+    </div>
+
+    <button id = 'btn1'>stop</button>
+
+    <script>
+        let view = setTimeout(popup, 3000);
+
+        function popup(){
+            document.getElementsByClassName('popup')[0].style.display = 'block';
+        }
+
+        btn1.onclick = function(){
+            clearTimeout(view);
+        }
+    </script>
+</body>
+</html>

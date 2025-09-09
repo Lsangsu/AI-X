@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <title>1</title>
+
+</head>
+
+<body>
+  <img src="img/banner_1.jpg" alt="banner" id="banner">
+
+  <script>
+    const banner = document.getElementById('banner');
+    let banner_array = ['img/banner_1.jpg', 'img/banner_2.jpg', 'img/banner_3.jpg']
+    let index = 0;
+
+    function slide(){
+      banner.src = banner_array[index];
+      index++;
+      if(index >= banner_array.length){
+        index = 0;
+      }
+    }
+
+    setInterval(slide, 1200);
+  </script>
+</body>
+
+</html>

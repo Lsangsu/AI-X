@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5_지역변수, 전역변수_var, let, const</title>
+</head>
+<body>
+    <h1>콘솔 확인</h1>
+
+    <h2>전역변수 / 지역변수</h2>
+    <script>
+        var vscope = 'global';   //전역변수
+        
+        function fscope(){
+            var vscope = 'local';   //지역변수
+            document.write('함수 안에서 ' + vscope + '<br>');
+        }
+
+        fscope();   //지역변수
+        document.write('함수 밖에서 ' + vscope);   //전역변수
+    </script>
+
+    <h2>변수별 차이(var, let, const)</h2>
+    <script>
+        var a = 123;
+        document.write(a + '<br>');
+        let name = 'lss';
+        document.write(name + '<br>');
+        const qwe = 2;
+        document.write(qwe + '<br>');
+
+        document.write('------------<br>');
+
+        //let과 const는 중북선언 불가
+        var a = "일이삼";
+        document.write(a + '<br>');
+        // let name = 'asd';
+        // const qwe = 3;
+
+        document.write('------------<br>');
+
+        //var, let은 재할당은 가능 / const는 불가
+        a = 456;
+        document.write(a + '<br>');
+        name = 'qwe';
+        document.write(name + '<br>');
+    </script>
+
+    <hr>
+    <h2>블로그 예문</h2>
+
+    <p id="demo">1번</p>
+    <script>
+        var x = 10;
+        function num(){
+            const x = 2;
+            document.write(x);
+        }
+        document.getElementById("demo").innerHTML = x;
+        num();
+    </script>
+
+</body>
+</html>

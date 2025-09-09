@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex_1_prac</title>
+    <style>
+        .container {
+            width:900px; height:500px; background-color:gold; margin:0 auto; 
+            display:flex; 
+            flex-direction:column; 
+            flex-wrap:wrap;
+            justify-content:space-around; 
+            align-content:space-evenly;
+        }
+        .container div {width:30%; height:30%; margin: 3px;}
+        .container > div{background-color:purple; color:white;}
+        .container div:nth-last-of-type(2) {
+            background-color: black;
+        }
+        
+
+
+        .container2 {
+            width: 500px; height: 400px; background-color: gold;
+            display: flex;
+            align-items: center;
+        }
+        .container2 div {
+            width:100px;
+            padding:50px 0; background-color: tomato;
+            flex-grow:1;
+        }
+        .container2 div:nth-of-type(2) {
+            background-color: red; 
+            align-self: stretch; flex-grow:2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style = "order:6;">1</div>        
+        <div style = "order:5;">2</div>        
+        <div style = "order:4;">3</div>
+        <div style = "order:3;">4</div>
+        <div style = "order:2;">5</div>
+        <div style = "order:1;">6</div>  
+    </div>
+
+
+    <hr>
+
+
+    <div class="container2">
+        <div>1</div>        
+        <div>2</div>        
+        <div>3</div>
+    </div>
+</body>
+</html>

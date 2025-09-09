@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener() 함수</title>
+
+    <style>
+        #box { 
+            width: 300px;
+            height: 200px;
+            background: url(https://flexible.img.hani.co.kr/flexible/normal/640/427/imgdb/original/2023/0825/20230825501217.webp);
+            background-size: cover;
+            cursor: pointer;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        addEventListener
+    </div>
+
+    <script>
+        const box = document.getElementById('box');
+
+        box.addEventListener("mouseover", chi)
+        box.addEventListener("mouseout", chi2)
+
+        function chi(){
+            box.style.backgroundImage = "url(https://i.namu.wiki/i/s2ACJ5PcL5iCr3gm7fAUpykazNgd7sH4-PqcK63jzeBnCFwbIv6pQuZrcTy_vjHDUyZNxK0F9df2vfiEr15VME8OB_7gqbROz3Lfaq2GHXETm0c7cUyWiiCg9Q5HDhpUBRC5RG_tSutvAENbnXzS2w.webp)"
+        }
+
+        function chi2(){
+            box.style.backgroundImage = "url(https://flexible.img.hani.co.kr/flexible/normal/640/427/imgdb/original/2023/0825/20230825501217.webp)"
+        }
+    </script>
+</body>
+</html>

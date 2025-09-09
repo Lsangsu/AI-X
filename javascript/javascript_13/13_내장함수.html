@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_내장함수</title>
+</head>
+<body>
+    
+
+    <script>
+        console.log(parseInt("5.23"));
+           // 문자형 -> 숫자형 
+
+        console.log(parseFloat("5.23"));
+           // 문자형 -> 실수형
+
+        console.log(String(5));
+           // 문자형 데이터로 변경
+
+        console.log(Number("5"));
+           // 숫자형 데이터로 변경
+
+        console.log(Boolean(5));
+           // 논리형 데이터로 변경
+
+        console.log(isNaN("5-3"));
+        console.log(isNaN(5));
+           // 문자를 포함하면 true, 숫자면 false 반환
+           
+        console.log(eval("5+9"));
+           // 문자형 데이터를 큰 따옴표가 없는 코드로 처리
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java2_test</title>
+</head>
+<body>
+    <h2>1. 구구단 한단 for문</h2>
+    <p id="demo"></p>
+    <script>
+        var text = "";
+        for(var i = 1; i < 10; i++){
+            text += "2 X " + i + " = " + 2*i + '<br>';
+        }
+        document.getElementById("demo").innerHTML = text;
+    </script>
+
+    <hr>
+
+    <h2>2. 구구단 한단 while문</h2>
+    <p id="demo2"></p>
+    <script>
+        var text = "";
+        var i = 1;
+        while(i < 10){
+            text += "3 X " + i + " = " + 3*i + '<br>';
+            i++;
+        }
+        document.getElementById("demo2").innerHTML = text;
+    </script>
+
+    <hr>
+
+    <h2>3. 구구단 한단 prompt로 받기</h2>
+    <p id="demo3"></p>
+    <script>
+        var text = "";
+        // var num = prompt("몇단을 실행할까요?", '0')
+        for(var i = 1; i < 10; i++){
+            text += num + " X " + i + " = " + num*i + '<br>';
+        }
+        document.getElementById("demo3").innerHTML = text;
+    </script>
+
+    <hr>
+    <h2>4. 구구단은 함수로</h2>
+    <script>
+        function cal(num){
+            for(var i = 1; i < 10; i++){
+                document.write(num + " X " + i + " = " + num*i + '<br>');
+            }
+        }
+        cal(2);
+    </script>
+    <hr>
+
+    <h2>5. 이중 for문(1~9단)</h2>
+    <p id="demo5"></p>
+    <script>
+        var text = "";
+        var i = 2;
+        var j = 1;
+        for(; i < 10; i++){
+            text += i + "단" + '<br>';
+            for(; j < 10; j++){
+                text += i + " X " + j + " = "+ (i*j) +'<br>';
+            }
+            text += "-------------------<br>";
+            j = 1;
+        }
+        document.getElementById("demo5").innerHTML = text;
+    </script>
+
+    <hr>
+
+    <h2>6. 최대값, 최소값, 평균값</h2>
+    <script>
+        var nums = [10, 20, 30, 40, 50]
+        var max = nums[0];
+        var min = nums[0];
+        var avr = 0;
+
+        for(var i = 0; i < nums.length; i++){
+            if(max < nums[i]){
+                max = nums[i];
+            }
+        }
+        document.write("최대값은 " + max + '<br>')
+
+        for(var i = 0; i < nums.length; i++){
+            if(min > nums[i]){
+                min = nums[i];
+            }
+        }
+        document.write("최소값은 " + min + '<br>')
+
+        for(var i = 0; i < nums.length; i++){
+            avr += nums[i];
+        }
+        document.write("평균값은 " + avr/nums.length + '<br>')
+    </script>
+
+    <h2>7. prompt로 받은 값이 문자인지 숫자인지</h2>
+    <script>
+        var val = window.prompt("문자나 숫자를 입력해주세요.", '0');
+        if(isNaN(val) == true){
+            document.write(val + " 은 문자입니다.");
+        }else{
+            document.write(val + " 은 숫자입니다.");
+        }
+    </script>
+</body>
+</html>

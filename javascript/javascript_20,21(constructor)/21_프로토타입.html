@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 생서자 함수
+        function Musical(seat, person, ticketvalue){
+            this.seat = seat;
+            this.person = person;
+            this.ticketvalue = ticketvalue;
+            this.musicalticket = function(){
+                document.write("뮤지컬 삼총사의 " + this.seat + "석 티켓 " + this.person + "장의 가격은 " + this.person * this.ticketvalue + "원 입니다. <br>")
+            }
+        }
+
+        // 인스턴스(객체) 생성
+        const todaymusical = new Musical("Vip", 5, 13000);
+        todaymusical.musicalticket();
+
+        const rmusical = new Musical('R', 2, 30000);
+        rmusical.musicalticket();
+
+        const smusical = new Musical('S', 4, 100000);
+        smusical.musicalticket();
+
+        // musicalticket()을 3번 호출하면서 메모리를 계속 잡아먹는다.
+    </script>
+
+
+    <hr>   
+
+    <script>
+        function Musical(seat, person, ticketvalue){
+            this.seat = seat;
+            this.person = person;
+            this.ticketvalue = ticketvalue;
+        }
+
+        Musical.prototype.musicalticket = function(){
+                document.write("뮤지컬 삼총사의 " + this.seat + "석 티켓 " + this.person + "장의 가격은 " + this.person * this.ticketvalue + "원 입니다. <br>")
+            }
+
+        // 인스턴스(객체) 생성
+        const todaymusical2 = new Musical("Vip", 5, 13000);
+        todaymusical2.musicalticket();
+
+        const rmusical2 = new Musical('R', 2, 30000);
+        rmusical2.musicalticket();
+
+        const smusical2 = new Musical('S', 4, 100000);
+        smusical2.musicalticket();
+
+        // musicalticket()을 프로토타입을 잡아주면 3번 호출하지만 메모리는 1번만 잡아먹는다.  ==> 생성자 함수에는 초기값만 잡고 실행 함수는 프로토타입으로 외부에서 작성.
+    </script>
+
+    <hr><hr>
+
+    <script>
+        // 객체
+        const Kim = {name:'Kim', first:10, second:20,
+            sum:function(){
+                return this.first + this.second;
+            }
+        };
+        const Lee = {name:'Lee', first:10, second:10,
+            sum:function(){
+                return this.first + this.second;
+            }
+        };
+
+        console.log("Kim.sum()", Kim.sum());
+        console.log("Lee.sum()", Lee.sum());
+
+
+        // 생성자함수
+        function Person(name, first, second){
+            this.name = name;
+            this.first = first;
+            this.second = second;
+            this.sum = function(){
+                return this.first + this.second;
+            }
+        }
+
+        const Kim2 = new Person('Kim', 10, 15);
+        const Lee2 = new Person('Lee', 15, 20);
+        console.log("Kim2.sum()", Kim2.sum());
+        console.log("Lee2.sum()", Lee2.sum());
+
+        // 프로토타입
+        function Person2(name, first, second){
+            this.name = name;
+            this.first = first;
+            this.second = second;
+        }
+
+        Person2.prototype.sum = function(){
+                return this.first + this.second;
+            }
+
+        const Kim3 = new Person('Kim', 15, 20);
+        const Lee3 = new Person('Lee', 20, 25);
+        console.log("Kim3.sum()", Kim3.sum());
+        console.log("Lee3.sum()", Lee3.sum());
+    </script>
+</body>
+</html>

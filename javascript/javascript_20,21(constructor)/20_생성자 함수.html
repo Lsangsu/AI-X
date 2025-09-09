@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 생서자 함수
+        function Musical(seat, person, ticketvalue){
+            this.seat = seat;
+            this.person = person;
+            this.ticketvalue = ticketvalue;
+            this.musicalticket = function(){
+                document.write("뮤지컬 삼총사의 " + this.seat + "석 티켓 " + this.person + "장의 가격은 " + this.person * this.ticketvalue + "원 입니다.")
+            }
+        }
+
+        // 인스턴스(객체) 생성
+        const todaymusical = new Musical("Vip", 5, 13000);
+        todaymusical.musicalticket();
+    </script>
+
+    <hr>
+
+    <script>
+        function Common_drink(category, volume){
+            this.category = category;
+            this.volume = volume;
+            this.fullprice = function(){
+                if(this.category=='맥주'){
+                    document.write(this.category + " " + this.volume + "잔은 " + this.volume * 4000 + "원 입니다.");
+                }else if(this.category=='소주'){
+                    document.write(this.category + " " + this.volume + "잔은 " + this.volume * 5000 + "원 입니다.");
+                }
+            }
+        }
+
+        let category = prompt("주류를 선택하세요(맥주, 소주)")
+        let volume = prompt('몇잔??')
+
+        const customerSelect = new Common_drink(category, volume);
+        customerSelect.fullprice();
+    </script>
+</body>
+</html>

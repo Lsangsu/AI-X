@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Class</title>
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="Search..." onkeyup="searchTable()">
+
+    <div class="wrap"></div>
+    
+    <script>
+        let originalData = [];
+
+        async function loadData(){   //loadData함수를 asunc(비동기)로 처리
+            try{
+                const response = await fetch("./class.json");
+
+                if(!response.ok){
+                    throw new Error("데이터를 불러오는데 실패했습니다.")
+                }
+                
+                originalData = await response.json();
+                renderTable(originalData);
+            } catch(error){
+                console.error("오류 발셍: ", error);
+            }
+        }
+
+        loadData();
+
+        function renderTable(data){
+            const wrap = document.querySelector('.wrap');
+            wrap.innerHTML = "";
+
+            if(data.length > 0){
+                const table = document.createElement('table');
+
+                data.forEach(function(item) {
+                    const row = document.createElement('tr');
+
+                    ['id', 'name', 'gender', 'addr'].forEach(function(key){
+                        const td = document.createElement('td');
+                        td.textContent = item[key];
+                        row.appendChild(td);
+                    });
+
+                    table.appendChild(row);
+                });
+
+                wrap.appendChild(table);
+            }
+        }
+
+        function searchTable(){
+            const searchText = document.getElementById('myInput').value.toLowerCase();
+
+            const filterData = originalData.filter(function(item){
+                return item.name.toString().includes(searchText) ||
+                item.gender.toLowerCase().includes(searchText) ||
+                item.addr.toString().includes(searchText);
+            });
+
+            renderTable(filterData);
+        };
+
+    </script>
+</body>
+</html>

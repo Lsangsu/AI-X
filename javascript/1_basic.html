@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 기초문법</title>
+    <style>
+        /* css 작성 */
+    </style>
+</head>
+<body>
+    <h1>자바스크립트의 수행 결과 출력</h1>
+    <hr>
+
+
+    <script>
+        // javascript
+        window.alert("(1) 경고창에 출력");
+        console.log("(2) 자바스크립트 콘솔에 출력");
+        document.write("(3) 도큐먼트 영역에 출력");
+    </script>
+
+    <h2>자바스크립트를 재미있게 학습합시다~</h2>
+
+    <hr>
+
+    <script>
+        var box;   // 변수 선언
+        box = 100;
+        box = 30;   // 마지막에 작성한 내용으로 덮어씀
+        document.write(box, '<hr>');
+
+        // 문자형 데이터
+        var s = 'javascript';
+        var num = '100';
+        var tag = '<h1>string</h1>';
+
+        document.write(s, '<br>');
+        document.write(num, '<br>');
+        document.write(typeof num, '<br>');
+        document.write(tag, '<hr>');
+
+        // 숫자형 데이터
+        var s = 100;
+        var t = Number('500');   // Number() = 문자형 데이터를 숫자로 변환
+
+        document.write(s, '<br>');
+        document.write(t, '<br>');
+        document.write(typeof t, '<br>');
+        document.write(s+t, '<hr>');
+
+        // 논리형 데이터
+        var s = true;                  //true
+        var t = 10>=100;               //false
+        var k = Boolean("hello");      //true
+        var m = Boolean(0);            //false
+        var h = Boolean("홍길동");      //true
+
+        document.write(s, '<br>');
+        document.write(t, '<br>');
+        document.write(k, '<br>');
+        document.write(m, '<br>');
+        document.write(h, '<hr>');
+
+        // 입력
+        var age = window.prompt('당신의 연령은?', "0")
+
+        if(age >= 20){
+            document.write("성인", '<hr>');
+        }else {
+            document.write("미성년", '<hr>');
+        }
+
+        // 문자열로 태그 입력
+        var t = '<table border = "1">';
+        t += '<tr>';
+        t += '<td>1</td><td>2</td><td>3</td>';
+        t += '</tr>';
+        t += '</table>';
+
+        document.write(t);
+    </script>
+
+</body>
+</html>

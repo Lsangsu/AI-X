@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15-2_객체 생성</title>
+</head>
+<body>
+    <script>  // 일반적인 객체 생성 방법
+        const person = {};
+
+        person.name = '이몽룡';   //객체 밖에서 데이터 입력시 = 사용
+        person.introduce = function(){
+            return "My name is " + this.name;
+        };
+
+        console.log(person.introduce());
+
+        const person2 = {
+            name: '성춘향',  // 객체 안에서 데이터 입력시 : 사용
+            introduce: function(){
+               return "My name is " + this.name; 
+            }
+        };
+
+        console.log(person2.introduce());
+        console.log("====================")
+    </script>
+
+    <script>  // 생성자 방식으로 객체 생성
+        function Person3(){}   // 생성자 함수 (첫글자가 대문자)
+
+        const p1 = new Person3();
+        console.log(p1);   // 객체는 생성되었지만 내부 데이터가 없음
+
+        p1.name = '이몽룡';
+        p1.introduce = function(){
+            return "My name is " + this.name; 
+        };
+
+        console.log(p1.introduce());
+
+        const p2 = new Person3();
+        p2.name = '성춘향';
+        p2.introduce = function(){
+            return "My name is " + this.name; 
+        };
+        console.log(p2.introduce());
+        console.log("====================")
+    </script>
+
+    <script> // 생성자 함수에 객체 정의
+        function Person4(name){
+            this.name = name;
+            this.introduce = function(){
+                return "My name is " + this.name; 
+            };
+        };
+
+        const p3 = new Person4('이몽룡');
+        const p4 = new Person4('성춘향');
+
+        console.log(p3);
+        console.log(p3.introduce());
+        console.log(p4.introduce());
+    </script>
+
+    <h2>블로그</h2>
+    <script>
+        function Common_mouse(color, button, name, weight){
+            this.color = color;
+            this.button = button;
+            this.name = name;
+            this.weight = weight;
+        };
+
+        const myMouse = new Common_mouse("black", 2, "QNIX", "150g");
+        document.write(myMouse.weight + '<br>');
+    </script>
+
+    <script>
+        function Test(beef, chicken, pork){
+            this.beef = beef;
+            this.chicken = chicken;
+            this.pork = pork;
+        };
+
+        const myDinner = new Test("소", "닭", "돼지");
+        document.write(myDinner.beef + '<br>');
+    </script>
+
+    <script>
+        function Common_Meatshop(category, volume, kgPerPrice){
+            this.category = category;
+            this.volume = volume;
+            this.kgPerPrice = kgPerPrice;
+            this.fullPrice = function(){
+                document.write(this.category + '고기 ' + this.volume + "kg은 " + this.volume * this.kgPerPrice + "원 입니다.");
+            };
+        };
+
+        const customerSelect = new Common_Meatshop("소", 5, 10000);
+        customerSelect.fullPrice();
+    </script>
+</body>
+</html>

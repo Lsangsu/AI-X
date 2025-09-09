@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function PersonType(name){
+            this.name = name;
+        };
+
+        PersonType.prototype.sayName = function(){
+            console.log(this.name);
+        };
+
+        let person = new PersonType("이상수");
+        person.sayName();
+
+        console.log(person instanceof PersonType);   //person 객체가 PersonType을 통해서 만들어진 인스턴스인가 확인하는 것
+        console.log(person instanceof Object);
+
+        console.log("------------------------------")
+    </script>
+
+    <script>
+        // 클래스
+        class PersonClass{
+            // PersonType 생성자와 동일
+            constructor(name){
+                this.name = name;
+            }
+
+            // PersonType.prototype.sayName와 동일
+            sayName(){
+            console.log(this.name);
+            }
+        }
+
+        let person2 = new PersonClass("이상수");
+        person2.sayName();
+
+        console.log(person instanceof PersonClass);
+        console.log(person instanceof Object);
+        console.log(typeof PersonClass);
+        console.log(typeof PersonClass.prototype.sayName);
+
+        console.log("------------------------------")
+    </script>
+
+    <script>
+        // 클래스 상속
+        class Car{
+            constructor(brand){
+                this.carname = brand;
+            };
+            present(){
+                return "I have a " + this.carname;
+            };
+        };
+
+        class Model extends Car{
+            constructor(brand, mod){
+                super(brand);   //부모의 constructor에 접근해서 적용
+                this.model = mod;
+            }
+            show(){
+                return this.present() + ", it is a " + this.model;
+            }
+        }
+
+        const myCar = new Model("Ford", "Mustang");
+        console.log(myCar.show());
+    </script>
+</body>
+</html>

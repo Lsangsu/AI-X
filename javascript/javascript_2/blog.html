@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문(조건문 / 선택문 / 반복문)</title>
+</head>
+<body>
+    <h2>조건문</h2>
+    <script>
+        var num = 10;
+
+        if(num <= 100){
+            document.write(num);
+        }else{
+            document.write("flase");
+        }
+    </script>
+
+
+    <script>
+        var num = window.prompt("좋아하는 숫자를 입력하세요", '0');
+              20//  window는 생략가능하다
+        
+        if(num % 2 == 0){
+            document.write("짝수");
+        }else{
+            document.write("홀수");
+        }
+    </script>
+
+
+    <script>
+        var score = 75;
+
+        if(score >= 90){
+            document.write("A학점");
+        }else if(score >= 80){
+            document.write("B학점");
+        }else if(score >= 70){
+            document.write("C학점");
+        }else if(score >= 60){
+            document.write("D학점");
+        }else if(score >= 50){
+            document.write("F학점");
+        }
+    </script>
+
+
+    <hr>
+
+    <h2>선택문</h2>
+    <script>
+        // 선택문 - switch
+        
+        var num = prompt('1~4까지 좋아하는 숫자 입력하세요.');
+        var eng;
+
+        switch (num){
+            case '1': 
+                eng = 'One';
+                break;
+            case '2': 
+                eng = 'Two'
+                break;
+            case '3': 
+                eng = 'Threee';
+                break;
+            case '4': 
+                eng = 'Four';
+                break;
+            default: 
+                alert("1~4까지만 입력하세요!!");
+                location.reload();
+        }
+
+        document.write(eng);
+    </script>
+
+
+    <hr>
+
+
+    <h2>반복문</h2>
+    <script>
+        // while
+        var i = 1;
+
+        while(i <= 10){
+            document.write("안녕하세요" + i + "<br>");
+            i++ ;
+        }
+        
+        document.write("---------------------------------------<br>")
+        
+        // do while
+        var i = 10;   // do while은 최초 1회는 무조건 실행함, 이후 조건문 비교해서 참이면 반복
+
+        do {
+            document.write("Hello" + i);
+            i--;
+        } while(i>3)        
+        
+        document.write("<br>---------------------------------------<br>")
+
+        // for
+        for(var i = 0; i <= 10; i++){
+            document.write("반복" + i, "<br>");
+        }
+    </script>
+
+
+    <hr><hr>
+
+
+    <script>
+        //break문
+        for(var i = 1; i <= 10; i++){
+            if(i==6){break;}
+            document.write(i, " ");
+        }
+
+        document.write("<br>---------------------------------------<br>")
+        
+        //continue문    
+        for(var i = 1; i <= 10; i++){
+            if(i==6){continue;}
+            document.write(i, " ");
+        }
+    </script>
+
+
+    <hr>
+
+    <script>
+        //삼항조건 연산자
+
+        var a = 10;
+        var b = 3;
+
+        var result = a<b ? "True" : "False";
+        document.write(result);
+    </script>
+</body>
+</html>

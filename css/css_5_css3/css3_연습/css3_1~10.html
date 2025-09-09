@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #box1{
+            width: 100px; height: 100px; background-color: gold;
+            }
+        #box2{
+            width: 100px; height: 100px; background-color: red;
+            opacity: 0.5; margin: -50px 0 0 50px;
+            }
+        #box3{
+            width: 100px; height: 100px; background-color: blue;
+            margin: 20px 0 0 50px;
+            }
+
+        #h1{background-color:red}
+        #h2{background-color:orange}
+        #p{background-color:gold}
+        #div1{width:50px; height:50px; background-color:green}
+
+        #opa1{
+            width:100px; height:100px; background-color: red; margin: 10px;
+            }
+        #opa2{
+            width:100px; height:100px; background-color: red; margin: 10px; opacity: 0.5;
+            }
+        #opa3{
+            width:100px; height:100px; background-color: red; margin: 10px; opacity: 0.3;
+            }
+
+        #banner{
+            width: 600px; height: 200px; background-color: gold;
+        }
+        .basic{
+            background-color: pink; margin:20px; border:solid 20px; width:100px; height: 100px; display:inline-block;
+        }
+        .inline{
+            background-color: orange; margin:20px;
+            border: solid 20px; display:inline-block;
+            width:100px; height: 100px; box-sizing: border-box;
+        }
+        .contant{
+            background-color: orange; margin:20px;
+            border: solid 20px; display:inline-block;
+            width:100px; height: 100px; box-sizing: content-box;
+        }
+
+        .sbox1{
+            width: 100px; height: 30px; border: 2px solid; margin:10px; box-shadow: 5px 5px 5px; text-align:center;
+        }
+        .sbox2{
+            width: 100px; height: 30px; border: 2px solid white; margin:10px; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); text-align:center;
+        }
+        .tbox1{
+            text-shadow:5px 5px 5px; margin:10px;
+        }
+        .tbox2{
+            text-shadow:5px 5px 4px rgba(255,0,0,0.8); margin:10px;
+        }
+
+        #grab1{
+            height: 100px; background-color:red; background-image:conic-gradient(red, gold);
+        }
+
+        .a,.b,.c,.d{
+            width: 300px; height: 300px;
+            background-color:gold;
+            margin:20px;
+            background-image:url(../img/green.png);
+        }
+        .a{
+            background-repeat:no-repeat;
+        }
+        .b{
+            background-repeat:no-repeat; background-position: center;
+        }
+        .c{background-repeat:repeat-x;}
+        .d{background-repeat:repeat-y;}
+
+        .multi_b{
+            width: 600px; height: 400px;
+            background-color:gold;
+            margin:20px;
+            background-image:url(../img/green.png), url(../img/tomato.png);
+            background-repeat: repeat-x;
+            background-position: top left, bottom left;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+
+    <hr>
+
+    <h1 id="h1">h1</h1>
+    <h2 id="h2">h2</h2>
+    <p id="p">p</p>
+    <div id="div1">div</div>
+    <ul>
+        <li>경기도</li>
+        <li>강원도</li>
+    </ul>
+    <dl>
+        <dt>사과</dt>
+        <dd>사과나무의 열매. 과육은 기본적으로 노란색~연두색이며, 맛은 품종마다 다르다</dd>
+    </dl>
+    <table>
+        <caption>시간표</caption>
+        <tr>
+            <th>과목</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+        </tr>
+        <tr>
+            <th>1교시</th>
+            <td>수학</td>
+            <td>과학</td>
+            <td>영어</td>
+        </tr>
+        <tr>
+            <th>2교시</th>
+            <td>국어</td>
+            <td>체육</td>
+            <td>영어</td>
+        </tr>
+        <tr>
+            <th>3교시</th>
+            <td>수학</td>
+            <td>과학</td>
+            <td>수학</td>
+        </tr>
+        <tr>
+            <th>4교시</th>
+            <td>수학</td>
+            <td>과학</td>
+            <td>영어</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <span>오늘은 수요일</span>
+    <sub>내일은 목요일</sub>
+    <sup>어제는 화요일</sup>
+    <hr>
+    <form>
+        <input type="radio"><span>7월</span>
+        <input type="checkbox"><span>8월</span>
+        <input type="text" value="이름">
+        <input type="submit">
+        <select>
+            <option value="volvo">Volvo</option>
+            <option value="Audi">Audi</option>
+        </select>
+        <input type="text" placeholder="이름을 입력하세요">
+        <fieldset>
+            <legend>이메일</legend>
+            <textarea name="message" rows="7" cols="21">
+이메일의 내용을 쓰세요.
+            </textarea>
+            <button>Click</button>
+        </fieldset>
+    </form>
+    <hr>
+    <img src="../img/forest.jpg" alt="forest" width="100" height="100">
+
+    <hr>
+
+    <div id="opa1">강원도</div>
+    <div id="opa2">경상북도</div>
+    <div id="opa3">제주도</div>
+
+    <hr>
+
+    <div id="banner">
+        <div class="basic">basic</div>
+        <div class="inline">inline</div>
+        <div class="contant">contant</div>
+    </div>
+
+    <hr>
+
+    <div class="sbox1">monday</div>
+    <div class="sbox2">friday</div>
+    <div class="tbox1">dog</div>
+    <div class="tbox2">cat</div>
+
+    <hr>
+
+    <div id="grab1"></div>
+
+    <hr>
+
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c"></div>
+    <div class="d"></div>
+
+    <hr>
+
+    <div class="multi_b"></div>
+
+</body>
+</html>

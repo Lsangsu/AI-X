@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript_practice</title>
+</head>
+<body>
+    <h2>사칙연산</h2>
+    <p id="add">add</p>
+    <p id="sub">sub</p>
+    <p id="mul">mul</p>
+    <p id="div">div</p>
+
+    <script>
+        var a = 5;
+        var b = 6;
+        var ab = a + b;
+        document.getElementById("add").innerHTML = 
+            "A + B = " + ab;
+        document.getElementById("add").style.color = "red";
+
+        var c = 100-38;
+        document.getElementById("sub").innerHTML =
+            "100 - 38 = " + c;
+        document.getElementById("sub").style.color = "orange";
+
+        var d = 4;
+        d *= 3;
+        document.getElementById("mul").innerHTML =
+            "D * 3 = " + d;
+        document.getElementById("mul").style.color = "gold";
+
+        var e = 5;
+        var f = 4;
+        var ef = e / f;
+        document.getElementById("div").innerHTML =
+            "E / F = " + ef;
+        document.getElementById("div").style.color = "green";
+    </script>
+
+
+    <hr>
+
+
+    <h2>증감 / 감소 연산자</h2>
+    <p id="opr+">++</p>
+    <p id="+opr">++</p>
+    <p id="opr-">--</p>
+    <p id="-opr">--</p>
+
+    <script>
+        var g = 6;
+        g++;
+        var h = 6;
+        ++h;
+        document.getElementById("opr+").innerHTML = 
+            "6++ = " + g;
+        document.getElementById("+opr").innerHTML = 
+            "++6 = " + h;   
+        var i = 6;
+        i--;
+        var j = 6;
+        --j;
+        document.getElementById("opr-").innerHTML = 
+            "6-- = " + i;
+        document.getElementById("-opr").innerHTML = 
+            "--6 = " + j;  
+    </script>
+
+
+    <hr>
+
+
+    <h2>문자 연산자</h2>
+    <p id="str">문자 더하기</p>
+    <p id="strnum">문자 숫자 더하기</p>
+    <p id="snn">문자 숫자 숫자 더하기</p>
+    <p id="nns">숫자 숫자 문자 더하기</p>
+
+    <script>
+        var k = "Home Sweat "
+        var l = "Home"
+        var kl = k + l;
+        document.getElementById("str").innerHTML = kl;
+
+        var m = 123;
+        var n = '사오육'
+        var mn = m + n;
+        document.getElementById("strnum").innerHTML = mn;
+
+        var o = '일이';
+        var p = 34;
+        var q = 56;
+        var opq = o + p + q;
+        document.getElementById("snn").innerHTML = opq;
+
+        var r = 12;
+        var s = 34;
+        var t = '오육'
+        var rst = r + s + t;
+        document.getElementById("nns").innerHTML = rst;
+    </script>
+
+    <hr>
+
+    <h2>Function</h2>
+    <p id="fun1"></p>
+    <p id="fun2" onclick="myFunction()">문자 바꾸기(클릭)</p>
+    <h3 id="fun3">신호등</h3>
+    <button onclick="b1()">붉은색</button>
+    <button id="b2">푸른색</button>
+    <button id="b3">노란색</button>
+    <script>
+        var u = function(a, b) {return a *b};
+        document.getElementById("fun1").innerHTML = u(20, 30);
+
+        function myFunction() {
+            document.getElementById("fun2").innerHTML = "자바스크립트";
+            document.getElementById("fun2").style.color = 'tomato';
+            document.getElementById("fun2").style.textDecoration = 'underline';
+        }
+
+        function b1() {
+            document.getElementById("fun3").style.color = "red";
+        }
+        document.getElementById("b2").onclick = function() {
+            document.getElementById("fun3").style.color = "blue";
+        }
+        document.getElementById("b3").onclick = function() {
+            document.getElementById("fun3").style.color = "gold";
+        }
+    </script>
+
+    <hr>
+
+    <ul>
+        <li>택시</li>
+        <li>버스</li>
+        <li>지하철</li>
+        <li>자차</li>
+        <li>행군</li>
+    </ul>
+    <button onclick="bhi()">퇴근차량 랜덤게임</button>
+    <button onclick="b4()">리셋</button>
+
+    <script>
+        var max = 5;
+        var randomIndex = Math.floor(Math.random() * max);
+        function bhi() {
+            document.getElementsByTagName('li')[randomIndex].style.color = "red";
+        }
+        function b4() {
+            document.getElementsByTagName('li')[randomIndex].style.color = "black";
+            randomIndex = Math.floor(Math.random() * max);
+        }
+    </script>
+
+    <hr>
+
+    <ul id="food">
+        <li>택시</li>
+        <li>버스</li>
+        <li>지하철</li>
+        <li>자차</li>
+        <li>행군</li>
+    </ul>
+    <button onclick="food()">퇴근차량 랜덤게임</button>
+    <button onclick="b5()">리셋</button>
+
+    <script>
+        var max = 5;
+        var randomIndex = Math.floor(Math.random() * max);
+        function food() {
+            document.getElementsByTagName('li')[randomIndex].style.color = "red";
+        }
+        function b5() {
+            document.getElementsByTagName('li')[randomIndex].style.color = "black";
+            randomIndex = Math.floor(Math.random() * max);
+        }
+    </script>
+</body>
+</html>

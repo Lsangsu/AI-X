@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+        
+    <h2>Create Object from JSON String</h2>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+        let text = '{"employees":[' +
+        '{"name":"강감찬","age":"21"},' +
+        '{"name":"김유신","age":"22"},' +
+        '{"name":"이순신","age":"23"},' +
+        '{"name":"유관순","age":"24"},' +
+        '{"name":"홍길동","age":"25"}]}';
+
+        const obj1 = JSON.parse(text);
+        document.getElementById("demo1").innerHTML =
+        obj1.employees[2].name + " " + obj1.employees[2].age;
+
+
+        const obj2 = obj1.employees;
+        let result = "";
+        for(let i in obj2){
+            result += "이름: " + obj2[i].name + " 나이: " + obj2[i].age + "<br>";
+        }
+        document.getElementById("demo2").innerHTML = result;
+
+        let t = '<table border="1">'
+        for(let i in obj2){
+            t+='<tr>';
+            t+='<td>이름</td> <td>' + obj2[i].name + '</td> <td>나이</td> <td>' + obj2[i].age +'</td>'
+            t+='<tr>';
+        }
+        document.getElementById("demo3").innerHTML = t;
+</script>
+</body>
+</html>

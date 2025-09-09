@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kinder</title>
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="검색~" onkeyup="searchTable()">
+    <div class="wrap"></div>
+
+    <script>
+        let originalData = [];
+
+        async function loadData(){ 
+            try{
+                const response = await fetch("./유치원현황.json");
+
+                if(!response.ok){
+                    throw new Error("데이터를 불러오는데 실패했습니다.")
+                }
+                
+                originalData = await response.json();
+                renderTable(originalData);
+            } catch(error){
+                console.error("오류 발셍: ", error);
+            }
+        }
+
+        loadData();
+
+        function renderTable(data){
+            const wrap = document.querySelector('.wrap');
+            wrap.innerHTML = "";
+
+            if(data.length > 0){
+                const table = document.createElement('table');
+                table.border = 1;
+                data.forEach(function(item) {
+                    const row = document.createElement('tr');
+
+                    ['EDU_SPORT_ADMT_NM', 'KDGT_NM', 'TELNO', 'REFINE_ROADNM_ADDR', 'REFINE_ZIPNO'].forEach(function(key){
+                        const td = document.createElement('td');
+                        td.textContent = item[key];
+                        row.appendChild(td);
+                    });
+
+                    table.appendChild(row);
+                });
+
+                wrap.appendChild(table);
+            };
+        };
+
+        // function searchTable(){
+        //     const searchText = document.getElementById('myInput').value.toLowerCase();
+
+        //     const filterData = originalData.filter(function(item){
+        //         return item.EDU_SPORT_ADMT_NM.toString().includes(searchText) ||
+        //         item.KDGT_NM.toString().includes(searchText) ||
+        //         item.TELNO.toString().includes(searchText) ||
+        //         item.REFINE_ROADNM_ADDR.toString().includes(searchText) ||
+        //         item.REFINE_ZIPNO.toString().includes(searchText);
+        //     });
+
+        //     renderTable(filterData);
+        // };
+
+        function searchTable(){
+            const searchText = document.getElementById('myInput').value.toLowerCase();
+            const rows = document.querySelectorAll('.wrap tr');
+
+            rows.forEach(function(row){
+                row.style.display = row.textContent.toLowerCase().includes(searchText) ? "" : "none";
+            })
+
+            renderTable(filterData);
+        };
+
+    </script>
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function gugudan(dan){
+            document.write("<h1>" + dan + "단 </h1>");
+            for(let i = 1; i < 10; i++){
+                document.write(dan + " X " + i + " = " + dan*i + '<br>')
+            }
+        };
+        gugudan(5);
+
+        // 화살표 함수
+        var gugudan2 = (dan2) =>{
+            document.write("<h1>"+dan2+"단 </h1>");
+            for(var j=1; j<=9; j++){
+                document.write(dan2+"X"+j+"="+dan2*j, "<br>");
+            }
+        }
+        gugudan2(3);
+    </script>
+
+    <script>
+        function sum(){
+            return arguments[0] + arguments[1];
+        }
+        console.log(sum(1, 2));
+
+
+        //화살표 함수는 아래와 같은 방법은 오류가 발생한다.
+        const sum1 = () => arguments[0] + arguments[1];
+        // console.log(sum1(10, 20));
+
+
+        //화살표 함수는 가변매개변수를 넣어주면 해결됨(... + 변수이름)
+        const sum2 = (...par) => par[0] + par[1] + par[2];
+        console.log(sum2(10, 20, 30));
+    </script>
+    <script>
+        function person1(name, age){
+            document.write("저의 이름은 " + name + " 나이는 " + age + '<br>');
+        }
+        person1("John", 19);
+        person2 = (name2, age2) => {
+            document.write("저의 이름은 " + name2 + " 나이는 " + age2 + '<br>');
+        }
+        person2("Do", 28)
+    </script>
+    <script>
+        var name = 'outer';
+        const e =  {
+            name: 'inner',
+            func(){
+                console.log(this.name);
+                function func2(){
+                    console.log(this.name);
+                };
+                func2();
+            }
+        };
+        e.func();
+
+        var name2 = 'outer';
+        const e2 =  {
+            name2: 'inner',
+            func(){
+                console.log(this.name2);
+                const func2 = () => {
+                    console.log(this.name2);
+                };
+                func2();
+            }
+        };
+        e2.func();
+    </script>
+</body>
+</html>

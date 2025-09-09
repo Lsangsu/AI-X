@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-1_event</title>
+</head>
+<body>
+    <!-- <h1 id ='textc'>과일</h1>
+    <input type="radio" name ='a' id="btn1" checked><span>토마토</span>
+    <input type="radio" name ='a' id="btn2"><span>바나나</span>
+    <input type="radio" name ='a' id="btn3"><span>수박</span>
+
+    <script>
+        this.onclick = function(e){
+            if(e.target.id == 'btn1'){textc.style.backgroundColor="tomato";}
+            if(e.target.id == 'btn2'){textc.style.backgroundColor="gold";}
+            if(e.target.id == 'btn3'){textc.style.backgroundColor="green";}
+        }
+    </script>
+
+    <hr>
+
+    <h1 id ='textc'>과일</h1>
+    <input type="radio" name ='b' id="btn1" checked><span>토마토</span>
+    <input type="radio" name ='b' id="btn2"><span>바나나</span>
+    <input type="radio" name ='b' id="btn3"><span>수박</span>
+
+    <script>
+        let inputs = document.querySelectorAll('input');
+        let colors = ['tomato', 'gold', 'green'];
+
+        for(let i in inputs){
+            inputs[i].onchange = function(){
+                console.log(this.id)
+                console.log(i)
+                if(this.id=='btn'+(Number(i)+1)){
+                    textc2.style.backgroundColor = colors[i];
+                }
+            }
+        }
+    </script> -->
+
+    <img src="img/apple.jpg" id="chi">
+
+      <h1>과일</h1>
+
+      <input type="radio" name="a" checked ><span>사과</span>
+      <input type="radio" name="a" ><span>바나나</span>
+      <input type="radio" name="a" ><span>오렌지</span>
+      <input type="radio" name="a" ><span>토마토</span>
+      <input type="radio" name="a" ><span>수박</span>
+
+      <script>
+        const imgs = ["img/apple.jpg", "img/banana.jpg", "img/orange.jpg", "img/tomato.jpg", "img/watermelon.jpg"]
+        const fruits = ["사과", "바나나", "오렌지", "토마토", "수박"]
+
+         this.onclick=function (){
+            for(var i = 0; i < imgs.length; i++){
+                if(document.getElementsByTagName('input')[i].checked==true){
+                    chi.src = imgs[i];
+                    document.getElementsByTagName('h1')[0].innerHTML = fruits[i];
+                }
+            }
+            // if(document.getElementsByTagName('input')[0].checked==true){
+            //    chi.src="img/apple.jpg";
+            //    document.getElementsByTagName('h1')[0].innerHTML="사과";
+            // }
+            // if(document.getElementsByTagName('input')[1].checked==true){
+            //    chi.src="img/banana.jpg";
+            //    document.getElementsByTagName('h1')[0].innerHTML="바나나";
+            // }
+            // if(document.getElementsByTagName('input')[2].checked==true){
+            //    chi.src="img/orange.jpg";
+            //    document.getElementsByTagName('h1')[0].innerHTML="오렌지";
+            // }
+            // if(document.getElementsByTagName('input')[3].checked==true){
+            //    chi.src="img/tomato.jpg";
+            //    document.getElementsByTagName('h1')[0].innerHTML="토마토";
+            // }
+            // if(document.getElementsByTagName('input')[4].checked==true){
+            //    chi.src="img/watermelon.jpg";
+            //    document.getElementsByTagName('h1')[0].innerHTML="수박";
+            // }
+         }
+
+      </script>
+
+</body>
+</html>

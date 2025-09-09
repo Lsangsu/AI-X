@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_prac</title>
+    <style>
+        * {margin: 0; padding: 0; font-size: inherit;}
+    </style>
+</head>
+<body>
+
+    <div id="prac1">
+        <h1>월요일</h1>
+        <h2>화요일</h2>
+    </div>
+
+    <script>
+        const prac1 = document.getElementById('prac1');
+        prac1.style.backgroundColor = 'gold';
+        prac1.style.fontSize = '50px';
+        prac1.style.color = 'red';
+    </script>
+    
+
+    <hr>
+
+
+    <h1 id="title">마우스 아웃</h1>
+
+    <a href="#" id="btn"><img src="https://images.unsplash.com/photo-1463947628408-f8581a2f4aca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="BUTTON" width="200" height="100"></a>
+
+    <p id="img_src"></p>
+
+    <script>
+        const theBtn = document.getElementById('btn');
+        const s = document.getElementById('img_src');
+
+        theBtn.onmouseover = function(){
+            document.getElementById('title').innerHTML = "마우스 오버";
+            theBtn.firstChild.src = "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80";
+            s.innerHTML = theBtn.firstChild.src;
+        }
+
+        theBtn.onmouseout = function(){
+            document.getElementById('title').innerHTML = "마우스 아웃";
+            theBtn.firstChild.src = "https://images.unsplash.com/photo-1463947628408-f8581a2f4aca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80";
+            s.innerHTML = theBtn.firstChild.src;
+        }
+    </script>
+
+
+    <hr>
+
+    <div id="wrap">
+        thisi is Fruit.<br>
+        <span>banana</span><br>
+        <span>apple</span><br>
+        Fruit is delicious.
+    </div>
+
+    <br>
+
+    <div id="answer1"></div><br>
+    <div id="answer2"></div><br>
+    <div id="answer3"></div>
+
+    <script>
+        document.getElementById('answer1').textContent = 
+        document.getElementById('wrap').innerHTML;
+
+        document.getElementById('answer2').innerHTML = 
+        document.getElementById('wrap').innerHTML;
+
+        document.getElementById('answer3').innerText = 
+        document.getElementById('wrap').innerHTML;
+    </script>
+
+</body>
+</html>

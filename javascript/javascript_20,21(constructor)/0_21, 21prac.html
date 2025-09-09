@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Common_bread(category, volume, perPrice){
+            this.category = category;
+            this.volume = volume;
+            this.perPrice = perPrice;
+        }
+
+        Common_bread.prototype.fullPrice = function(){
+            document.write(this.category + '빵' + this.volume + '개는' + this.volume * this.perPrice + '원 입니다.');
+        }
+
+        const breadSelect = new Common_bread('소보루', 10, 1000);
+        breadSelect.fullPrice();
+        </script>
+
+    <hr>
+
+    <script>
+        function CakeShop(category, pcs , price){
+            this.category = category;
+            this.pcs = pcs;
+            this.price = price;
+        }
+
+        CakeShop.prototype.fullPrice = function(){
+            document.write(this.category + ' 케익 ' + this.pcs + '조각 가격은 ' + this.pcs * this.price + '원 입니다.');
+        }
+        const mySelect = new CakeShop('당근', 3, 6000);
+        mySelect.fullPrice();
+    </script>
+
+    <hr>
+
+    <script>
+        function Common_drink(category, volume){
+            this.category = category;
+            this.volume = volume;
+        }
+
+        Common_drink.prototype.fullprice = function(){
+            if(this.category=='맥주'){
+                document.write(this.category + " " + this.volume + "잔은 " + this.volume * 4000 + "원 입니다.");
+            }else if(this.category=='소주'){
+                document.write(this.category + " " + this.volume + "잔은 " + this.volume * 5000 + "원 입니다.");
+            }else{
+                let category = prompt("맥주, 소주중 선택하세요")
+                let volume = prompt('몇잔??')
+                const customerSelect = new Common_drink(category, volume);
+                customerSelect.fullprice();
+            }
+        }
+
+        let category = prompt("주류를 선택하세요(맥주, 소주)")
+        let volume = prompt('몇잔??')
+
+        const customerSelect = new Common_drink(category, volume);
+        customerSelect.fullprice();
+    </script>
+</body>
+</html>

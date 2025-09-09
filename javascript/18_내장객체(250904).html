@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18_내장객체</title>
+</head>
+<body>
+    <script>
+        const t = new Date();
+        let nowMonth = t.getMonth() + 1;
+        let nowDate = t.getDate();
+        let nowDay = t.getDay();
+
+        console.log(nowDate + "월 " + nowDay + "일 " + nowDay + "요일")
+        
+        const m = new Date(2026,2,26);
+
+        let theMonth = m.getMonth(); 
+        let theDate = m.getDate(); 
+        let theDay = m.getDay(); 
+
+        console.log("2026 내 생일 몇 월: " + theMonth);
+        console.log("2026 내 생일 몇 일: " + theDate);
+        console.log("2026 내 생일은 무슨 요일: " + theDay);
+    </script>
+
+    <hr>
+
+    <script>
+        let txt = "Hello Thank you good luck to you";
+                 //0     6     12  16   21   26 29
+
+        document.write(txt.charAt(16),"<br>");             //g
+        document.write(txt.indexOf("you"),"<br>");         //12
+        document.write(txt.indexOf("you",16),"<br>");      //you -> 29 (you를 찾는데 16번째 인덱스부터)
+        document.write(txt.lastIndexOf("you"),"<br>");     //29
+        document.write(txt.lastIndexOf("you",25),"<br>");  //to y -> 12(you를 찾는데 25번째 인덱스부터)
+        document.write(txt.match("luck"),"<br>");          //true
+        document.write(txt.search("you"),"<br>");          //12
+        document.write(txt.substr(21,4),"<br>");           //luck
+        document.write(txt.substring(6,12),"<br>");        //Thank 
+        document.write(txt.replace("you","me"),"<br>");    //Hello Thank me good luck to you
+        document.write(txt.toLowerCase(),"<br>");          //hello thank You good luck to you
+        document.write(txt.toUpperCase(),"<br>");          //HELLO THANK YOU GOOD LUCK TO YOU
+        document.write(txt.length,"<br />");               //32
+    </script>
+
+    <hr>
+
+    <script>
+        let userName = prompt("당신의 이름은?")
+        let reg1 = /^[가-힣]{2,5}$/;
+        while(true){
+            if(reg1.test(userName)) break;
+            alert("이름 입력 형식이 잘못되었습니다!");
+            userName = prompt("당신의 이름은?");
+        }
+
+        let userCell = prompt("당신의 핸드폰 번호는?");
+        reg2 = /^(010)\d{3,4}\d{4}$/;
+        while(true){
+            if(reg2.test(userCell)) break;
+            alert("핸드폰 입력 형식이 잘못되었습니다!");
+            userCell = prompt("당신의 핸드폰 번호는?");
+        }
+
+        let userEmail = prompt("당신의 이메일은?");
+        reg3=/^\w{5,12}@[a-z]{2,10}[\.][a-z]{2,3}[\.]?[a-z]{0,2}$/;
+        while(true){
+            if(reg3.test(userEmail)) break;
+            alert("이메일 입력 형식이 잘못되었습니다!");
+            userEmail = prompt("당신의 이메일은?");
+        }
+
+        document.write(userName, "<br>");
+        document.write(userCell, "<br>");
+        document.write(userEmail, "<br>");
+</script>
+    
+    <h2>----------문제----------</h2>
+
+    <button onclick="chColor()">배경 색상 바꾸기</button>
+    <script>
+        function chColor(){
+            let arrColor=["#ff0","#6c0","#fcf","#cf0","#39f"];
+            let i = Math.floor(Math.random()*5);
+            console.log(i)
+            document.getElementsByTagName('body')[0].style.backgroundColor = arrColor[i];
+        }
+    </script>
+
+    <hr>
+
+    <script>
+        function avgWeight(h, w){
+            let weight = (h-100)*0.9
+            document.write("적정 몸무게는 " + weight + "kg 입니다." + '<br>');
+            if(w>=weight){
+                document.write("평균 몸무게 이상입니다.");
+            }else{
+                document.write("평균 몸무게 미만입니다.");
+            }
+        };
+        avgWeight(180,74);
+    </script>
+
+</body>
+</html>

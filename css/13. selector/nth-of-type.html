@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nth-child / nth-of-type</title>
+
+    <style>
+        .box > p:nth-of-type(1) {color: blue;}
+        .box > span:nth-of-type(1) {color: brown;}
+        /* 자손 중 해당 태그에 해당하는 n번째에 적용 */
+
+        .box > :nth-of-type(2) {color: red;}
+         /* 자손 중 태그별 2번째에 해당하는 모든곳에 적용 */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>1. p태그1</p>
+        <span>2. span태그1</span>
+        <p>3. p태그2</p>
+        <span>4. span태그2</span>
+        <p>5. p태그3</p>
+    </div>
+</body>
+</html>

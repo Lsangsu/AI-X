@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display property</title>
+    <style>
+        /* 인라인 요소는 width, height, 상하여백 적용불가(좌우여백 가능) / 인라인블럭, 블럭 속성은 모두 가능 */
+        .box {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            color: white;
+            background-color: red;
+        }
+
+        #two {
+            display: none;
+        }
+
+        a {
+            display: block;
+            width:50%; height:30px; margin:10px;
+        }
+
+        a:nth-of-type(odd) {
+            background-color: pink;
+        }
+        a:nth-of-type(even) {
+            background-color: cyan;
+        }
+        /* odd는 홀수번쨰만 even은 짝수번째만  */
+    </style>
+</head>
+<body>
+    <div class="box">ONE</div>
+    <div class="box" id="two">TWO</div>
+    <div class="box">THREE</div>
+    <div class="box">FOUR</div>
+
+    <a href=""#>position</a>
+    <a href=""#>float</a>
+    <a href=""#>display</a>
+    <a href=""#>float</a>
+</body>
+</body>
+</html>

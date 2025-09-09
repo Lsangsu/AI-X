@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(`hello world!`)
+        console.log(`
+            hi!
+                it's me!
+                    JavaScript!
+            So Cool!
+        `)
+
+        var name = '사과';
+        var price = 100;
+        var num = 5;
+        console.log(`${name}의 구매가는 ${price * num}입니다.`);
+    </script>
+
+
+    <h2>JavaScript Template Literals</h2>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+        let text1 = `He's often called"Johnny"`
+        document.getElementById('demo1').innerHTML = text1;
+
+        let firstName = "John";
+        let lastName = "Doe";
+        let text2 = `Welcome ${firstName}, ${lastName}!`
+        document.getElementById('demo2').innerHTML = text2;
+    </script>
+</body>
+</html>
